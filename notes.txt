@@ -1,0 +1,8 @@
+ShowMex:  Is the virtual enviroment for work with the project
+Activate: source ShowMex/bin/activate
+
+showmemex: Is the project with django where I'm putting the knowledge that I get from the
+platzi course. 
+
+platzigram: Is the project that I need to develop in the platzi django course (django)
+

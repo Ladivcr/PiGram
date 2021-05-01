@@ -1,2 +1,2 @@
 ShowMex/
-platzigram/__pycache__/
+platzigram/__pycache__/*.cpython-36.pyc

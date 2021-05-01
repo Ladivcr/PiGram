@@ -15,24 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
+from platzigram import views
+
 #urlpatterns = [
     #path('admin/', admin.site.urls),
 #]
 
-def hello_world(request):
-    """[summary]
-
-    Args:
-        request ([type]): [description]
-
-    Returns:
-        [type]: [description]
-    """
-    return HttpResponse('Hello, world!')
-
+# ! Aqui van los urls y la función que los controla
 # * hello-world es la url y hello_world es la respuesta o 
 # * lo que se muestra al ir a esa url
 urlpatterns = [
-    path('hello-world/', hello_world),
+    path('hello-world/', views.hello_world),
+    path('hi/', views.hi),
 ]

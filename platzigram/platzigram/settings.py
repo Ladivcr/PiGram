@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# ! Esta linea declara el lugar dónde esta corriendo el proyecto
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -20,16 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# ! El secret key es usado para el hashing de las contraseñas y de las sesiones 
+# ! que se almacenan en la base de datos
 SECRET_KEY = 'django-insecure-wmq1)!i2!r_019oeoqos@v+%qg04(v*hi4qg#^7q(vnpfb49@)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# ! Es importante que esta variable se mantenga en False cada que 
+# ! nuestro proyecto es liberado a producción 
 DEBUG = True
 
+# ! Que host estan permitidos de interactuar con nuestro proyecto
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# ! Cuales son las aplicaciones que estan ligadas a nuestro proyecto con django
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# ! Lo mismo que INSTALLED_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# ! Nuestro archivo/modulo principal de urls
 ROOT_URLCONF = 'platzigram.urls'
 
 TEMPLATES = [
@@ -67,12 +75,13 @@ TEMPLATES = [
     },
 ]
 
+# ! Archivo principal de wsgi
 WSGI_APPLICATION = 'platzigram.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# ! La configuración de la base de datos
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -83,7 +92,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
+# ! Validadores de contraseña
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -102,11 +111,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
-
+# ! Lenguaje con el que se interactua con la app 
 LANGUAGE_CODE = 'en-us'
-
+# ! Horario 
 TIME_ZONE = 'UTC'
 
+# ! Los tres siguientes "True" son cosas para traducción
 USE_I18N = True
 
 USE_L10N = True
@@ -116,7 +126,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+# ! Define que cada que se vaya a /static/ en lugar de resolver la url 
+# ! usando el archivo urls.py va a buscar resolver el archivo estatico que se
+# ! esta pidiendo 
 STATIC_URL = '/static/'
 
 # Default primary key field type

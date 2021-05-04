@@ -1,2 +1,2 @@
-# Show-Mex
-I want to show the affected places by fire, avocado and other things
+# PiGram
+Just a small project to show that I know Django 

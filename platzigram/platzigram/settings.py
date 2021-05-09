@@ -66,7 +66,9 @@ ROOT_URLCONF = 'platzigram.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,6 +136,9 @@ USE_TZ = True
 # ! usando el archivo urls.py va a buscar resolver el archivo estatico que se
 # ! esta pidiendo 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

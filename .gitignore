@@ -1,2 +1,4 @@
 ShowMex/
-platzigram/__pycache__/*.cpython-36.pyc
+platzigram/__pycache__/
+platzigram/posts/__pycache__/
+platzigram/users/__pycache__/

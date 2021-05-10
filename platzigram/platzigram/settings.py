@@ -136,9 +136,18 @@ USE_TZ = True
 # ! usando el archivo urls.py va a buscar resolver el archivo estatico que se
 # ! esta pidiendo 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [(
+    BASE_DIR / 'static'
+)]
+STATICFILES_FINDERS = [
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    ]
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/users/login/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

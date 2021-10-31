@@ -2,3 +2,4 @@ ShowMex/
 platzigram/__pycache__/
 platzigram/posts/__pycache__/
 platzigram/users/__pycache__/
+ENV/

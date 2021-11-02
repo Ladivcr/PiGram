@@ -59,10 +59,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'platzigram.middleware.ProfileCompletionMiddleware',
 ]
 # ! Nuestro archivo/modulo principal de urls
 ROOT_URLCONF = 'platzigram.urls'
 
+# ! BASE_DIR / 'templates' es para los templates html a mostrar
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

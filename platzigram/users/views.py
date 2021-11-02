@@ -11,6 +11,19 @@ from users.models import Profile
 # Exception
 from django.db.utils import IntegrityError
 # Create your views here.
+
+def update_profile(request):
+    """update a user's profile view"""
+    profile = request.user.profile
+
+    return render(request = request,
+        template_name = 'users/update_profile.html',
+        context={
+            'profile': profile,
+            'user': request.user
+        }
+    )
+
 def login_view(request):
     """ longin view """
 
@@ -31,7 +44,7 @@ def signup(request):
         username = request.POST['username']
         passwd = request.POST['passwd']
         passwd_confirmation = request.POST['passwd_confirmation']
-        
+
         if passwd != passwd_confirmation: 
             return render(request, 'users/signup.html', {'error': 'Password confirmation does not match'})
 
@@ -44,7 +57,6 @@ def signup(request):
         user.last_name = request.POST['last_name']
         user.email = request.POST['email']
         user.save()
-        
         profile = Profile(user=user)
         profile.save()
 

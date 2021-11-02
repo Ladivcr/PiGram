@@ -10,17 +10,37 @@ from users.models import Profile
 
 # Exception
 from django.db.utils import IntegrityError
-# Create your views here.
 
+# FORMS
+from users.forms import ProfileForm
+
+# Create your views here.
 def update_profile(request):
     """update a user's profile view"""
     profile = request.user.profile
+
+    if request.method == 'POST':
+        # request.FILES contiene los archivos que enviamos
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = form.cleaned_data
+
+            profile.website = data["website"]
+            profile.phone_number = data["phone_number"]
+            profile.biography = data["biography"]
+            profile.picture = data["picture"]
+            profile.save()
+
+            return redirect('update_profile')
+    else:
+        form = ProfileForm()
 
     return render(request = request,
         template_name = 'users/update_profile.html',
         context={
             'profile': profile,
-            'user': request.user
+            'user': request.user,
+            'form': form,
         }
     )
 
